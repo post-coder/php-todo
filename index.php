@@ -23,11 +23,16 @@
     
             <h1>Todo</h1>
 
-            <ul>
+            <ul class="mb-4">
                 <li v-for="todo in todoList">
                     {{todo}}
                 </li>
             </ul>
+
+            <div class="p-3 border border-2 rounded-3 d-flex">
+                <input class="w-100" type="text" placeholder="Nuovo todo" v-model="newTodoText">
+                <button @click="addTodo">Aggiungi</button>
+            </div>
     
         </div>
     </div>

@@ -4,6 +4,20 @@ createApp({
     data() {
         return {
             todoList: [],
+            
+            newTodoText: '',
+        }
+    },
+
+    methods: {
+
+        addTodo() {
+            
+            axios.get('./server.php?newTodo=' + this.newTodoText).then(res => {
+                console.log(res);
+                this.todoList = res.data
+            })
+
         }
     },
 
